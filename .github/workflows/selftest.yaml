@@ -1,0 +1,22 @@
+name: Selftest
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  selftest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Self test
+        id: selftest
+        uses: kruchenburger/telegram-notifier@master
+        with:
+          status: ${{ job.status }}
+          token: ${{ secrets.TG_TOKEN }}
+          chat_id: ${{ secrets.TG_CHAT_ID }}
+
+      - name: Check outputs
+        run: |
+          test "${{ steps.selftest.outputs.status }}" == "Successfully delivered"

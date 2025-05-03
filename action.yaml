@@ -1,0 +1,22 @@
+name: "Telegram Notifier"
+description: "Send notifications to Telegram"
+author: "kruchenburger"
+inputs:
+  chat_id:
+    description: "Chat to send: chat_id or @channel_name"
+    required: true
+  token:
+    description: "Telegram Bot token"
+    required: true
+  status:
+    description: "The current status of the job"
+    required: true
+outputs:
+  status:
+    description: "Returns the status of the message delivery"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+branding:
+  icon: "message-square"
+  color: "blue"
