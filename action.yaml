@@ -1,4 +1,4 @@
-name: "Telegram Status"
+name: "Telegram Notifier"
 description: "Send notifications to Telegram"
 author: "kruchenburger"
 inputs:
