@@ -41,7 +41,7 @@ jobs:
 
     - name: Telegram Notification
       if: always()
-      uses: kruchenburger/telegram-notifier@master # you can put here any branch or version
+      uses: kruchenburger/telegram-notifications@master # you can put here any branch or version
       with:
         status: ${{ job.status }} # this line is required and should not change.
         token: ${{ secrets.TG_TOKEN }}  # always keep the telegram api token secret, especially in a public repository
@@ -69,7 +69,7 @@ Just add this step in the end of your pipeline
 ```yaml
   - name: Telegram Notification
     if: always()
-    uses: kruchenburger/telegram-notifier@master # you can put here any branch or version
+    uses: kruchenburger/telegram-notifications@master # you can put here any branch or version
     with:
       status: ${{ job.status }} # this line is required and should not change.
       token: ${{ secrets.TG_TOKEN }}  # always keep the telegram api token secret, especially in a public repository
