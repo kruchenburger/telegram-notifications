@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@master
       - name: Self test
         id: selftest
-        uses: kruchenburger/telegram-notifier@master
+        uses: kruchenburger/telegram-notifications@master
         with:
           status: ${{ job.status }}
           token: ${{ secrets.TG_TOKEN }}
