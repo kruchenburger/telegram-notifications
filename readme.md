@@ -41,7 +41,7 @@ jobs:
 
     - name: Telegram Notification
       if: always()
-      uses: kruchenburger/telegram-notifications@master # you can put here any branch or version
+      uses: kruchenburger/telegram-notifier@master # you can put here any branch or version
       with:
         status: ${{ job.status }} # this line is required and should not change.
         token: ${{ secrets.TG_TOKEN }}  # always keep the telegram api token secret, especially in a public repository
@@ -50,26 +50,26 @@ jobs:
 
 ### Inputs
 
-| Input     | Description                                                                                                         |
-| --------- | ------------------------------------------------------------------------------------------------------------------- |
-| `status`  | The current status of the job.                                                                                      |
-| `token`   | Telegram api token for your notification bot.                                                                       |
-| `chat_id` | User or chat ID or channel name to which notifications should be sent. @channel_name work only for public channels. |
+| Input     | Description                                                                                                          |
+| --------- | -------------------------------------------------------------------------------------------------------------------- |
+| `status`  | The current status of the job.                                                                                       |
+| `token`   | Telegram api token for your notification bot.                                                                        |
+| `chat_id` | User or chat ID or channel name to which notifications should be sent. @channel_name works only for public channels. |
 
 ### Outputs
 
-| Output   | Description                                                                                                                                             |
-| -------- | ------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `status` | Returns the status of the message delivery. `Successfully delivered` if action complited with success and `Notification has not been delivered` if not. |
+| Output   | Description                                                                                                                                                     |
+| -------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `status` | Returns the status of the message delivery. `Successfully delivered` if the action is completed successfully, and `Notification has not been delivered` if not. |
 
 ## How to use in your Workflow
 
-Just add this step in the end of your pipeline
+Just add this step at the end of your pipeline
 
 ```yaml
   - name: Telegram Notification
     if: always()
-    uses: kruchenburger/telegram-notifications@master # you can put here any branch or version
+    uses: kruchenburger/telegram-notifier@master # you can put here any branch or version
     with:
       status: ${{ job.status }} # this line is required and should not change.
       token: ${{ secrets.TG_TOKEN }}  # always keep the telegram api token secret, especially in a public repository
