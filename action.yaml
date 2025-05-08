@@ -1,4 +1,4 @@
-name: "Telegram Notifications"
+name: "Telegram Workflow Notifier"
 description: "Send notifications to Telegram"
 author: "kruchenburger"
 inputs:
